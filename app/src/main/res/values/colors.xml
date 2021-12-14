@@ -5,6 +5,13 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+    <color name="army_700">#FF314A1C</color>
+    <color name="army_500">#FF3D8B2D</color>
+    <color name="army_200">#87C186</color>
+    <color name="umber_200">#D67B5B</color>
+    <color name="umber_700">#514138</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
