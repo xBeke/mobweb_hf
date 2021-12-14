@@ -1,6 +1,10 @@
-<resources>
-    <string name="app_name">MWNHF</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">TrailWorks</string>
     <string name="stop">Stop</string>
     <string name="history">History</string>
     <string name="start">Start</string>
+    <string name="qna" tools:ignore="Typos">Do you wanna save?</string>
+    <string name="yes">Yes sir!</string>
+    <string name="nop">No way…</string>
+    <string name="zeroz">00:00</string>
 </resources>

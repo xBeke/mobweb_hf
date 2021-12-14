@@ -6,6 +6,7 @@ import android.os.SystemClock
 import android.os.SystemClock.elapsedRealtime
 import android.widget.Chronometer
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import hu.bme.aut.mwnhf.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,11 +21,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.start.setOnClickListener {
-            binding.time.base = SystemClock.elapsedRealtime()
+            binding.time.base = elapsedRealtime()
             binding.time.start()
         }
         binding.stop.setOnClickListener {
             binding.time.stop()
+            AlertDialog.Builder(this)
+                .setMessage(getString(R.string.qna))
+                .setPositiveButton(getString(R.string.yes)) { _, _ -> showDetails() }
+                .setNegativeButton(getString(R.string.nop), null)
+                .show()
+            binding.time.text = getString(R.string.zeroz)
         }
+    }
+
+    private fun showDetails(){
+
     }
 }
