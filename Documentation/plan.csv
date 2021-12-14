@@ -1,0 +1,39 @@
+﻿Issue Type;#;Task name;Summary;Description;Issue ID;Parent ID;Priority;Labels;Labels
+Epos;100;Main page;100 - Main page;Implementation of main page;10;;;;
+Task;110;Create activity;110 - Create activity;;;10;1;Activity;
+Task;120;Buttons;120 - Buttons;;1;10;1;Styles/Themes;
+Sub-task;121;Start;121 - Start;;;1;1;;
+Sub-task;122;Stop;122 - Stop;;;1;1;;
+Sub-task;123;History;123 - History;;;1;1;;
+Sub-task;124;Counter;124 - Counter;;;1;1;;
+Task;130;Buttons Logic;130 - Buttons Logic;;2;10;1;;
+Sub-task;131;Start timer;131 - Start timer;;;2;1;;
+Sub-task;132;End timer;132 - End timer;;;2;1;;
+Sub-task;133;Open history;133 - Open history;;;2;1;;
+Task;140;Record the trip;140 - Record the trip;;3;10;1;;
+Sub-task;141;Record coordinates;141 - Record coordinates;;;3;1;;
+Sub-task;142;Persistent save coordinates;142 - Persistent save coordinates;;;3;1;Persistance;
+Epos;200;Scroll page;200 - Scroll page;Implementation of scroll page;20;;;;
+Task;201;Create activity;201 - Create activity;;;20;1;Activity;
+Task;202;Add linear layout;202 - Add linear layout;;;20;1;;
+Task;210;Create generic trip;210 - Create generic trip;;4;20;1;Styles/Themes;
+Sub-task;211;Show time sum;211 - Show time sum;;;4;1;;
+Sub-task;212;Trip length;212 - Trip length;;;4;1;;
+Sub-task;213;Start time;213 - Start time;;;4;2;;
+Sub-task;214;End time;214 - End time;;;4;2;;
+Sub-task;215;Height difference;215 - Height difference;;;4;3;;
+Task;220;Import from persistent storage;220 - Import from persistent storage;;;20;1;Persistance;
+Task;230;Implement move to details;230 - Implement move to details;;;20;1;Intent;
+Task;240;Delete trip;240 - Delete trip;;;20;;Persistance;
+Epos;300;Details page;300 - Details page;Implementation of details page;30;;;;
+Task;301;Create activity;301 - Create activity;;;30;1;Activity;Intent
+Tasks;302;Details;302 - Details;;5;30;1;Styles/Themes;Intent
+Sub-task;310;start time;310 - start time;;;5;2;;
+Sub-task;311;end time;311 - end time;;;5;2;;
+Sub-task;312;length in m;312 - length in m;;;5;2;;
+Sub-task;313;length in time;313 - length in time;;;5;2;;
+Sub-task;314;Height difference;314 - Height difference;;;5;3;;
+Sub-task;315;uphill;315 - uphill;;;5;4;;
+Sub-task;316;downhill;316 - downhill;;;5;4;;
+Sub-task;317;max speed;317 - max speed;;;5;5;;
+Sub-task;318;average speed;318 - average speed;;;5;5;;
