@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var database: TripDb
-    private var isRunning: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +26,15 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         database = TripDb.getDatabase(applicationContext)
+        binding.stop.isEnabled = false
 
         binding.start.setOnClickListener {
             binding.time.base = elapsedRealtime()
             binding.time.start()
+            binding.start.isEnabled = false
+            binding.stop.isEnabled = true
         }
+
         binding.stop.setOnClickListener {
             binding.time.stop()
             AlertDialog.Builder(this)
@@ -40,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                 .setNegativeButton(getString(R.string.nop), null)
                 .show()
             binding.time.text = getString(R.string.zeroz)
+            binding.start.isEnabled = true
+            binding.stop.isEnabled = false
         }
         binding.history.setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
