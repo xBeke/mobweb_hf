@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="hu.bme.aut.mwnhf">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MWNHF">
+        <activity
+                android:name=".Details"
+                android:exported="false"
+                android:label="@string/title_activity_details"
+                android:theme="@style/Theme.MWNHF.NoActionBar" />
         <activity
                 android:name=".HistoryActivity"
                 android:exported="false"
@@ -19,6 +27,7 @@
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

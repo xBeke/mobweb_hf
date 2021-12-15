@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Start time"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                     />
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+        <View
+                android:layout_marginVertical="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="End time"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Length in meter"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+        <View
+                android:layout_marginVertical="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Length in time"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Uphill"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+        <View
+                android:layout_marginVertical="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Downhill"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Max Speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+        <View
+                android:layout_marginVertical="10dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:text="Average speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlCompat"
+                    android:textSize="24sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
