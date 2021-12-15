@@ -44,10 +44,11 @@ class HistoryActivity : AppCompatActivity(), TripAdapter.TripClickListener {
         }
     }
 
-    override fun onItemChanged(item: Trip) {
+    override fun onItemDeleted(item: Trip) {
         thread {
-            database.TripDao().update(item)
-            Log.d("HistoryActivity", "Trip update was successful")
+            database.TripDao().deleteItem(item)
+            Log.d("HistoryActivity", "Trip was successfully deleted")
+            loadItemsInBackground()
         }
     }
 }
