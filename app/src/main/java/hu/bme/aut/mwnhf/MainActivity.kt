@@ -20,14 +20,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
+
         setContentView(view)
         database = TripDb.getDatabase(applicationContext)
         binding.stop.isEnabled = false
-
         var actualTrip = Trip(startTime = 0, endTime = 0)
 
+        addStartOnClick(actualTrip)
+        addStopOnClick(actualTrip)
+        addHistoryOnClick()
+    }
+
+    private fun addStartOnClick(actualTrip: Trip) {
         binding.start.setOnClickListener {
             binding.time.base = elapsedRealtime()
             binding.time.start()
@@ -35,7 +42,9 @@ class MainActivity : AppCompatActivity() {
             binding.stop.isEnabled = true
             actualTrip.startTime = Date().time
         }
+    }
 
+    private fun addStopOnClick(actualTrip: Trip) {
         binding.stop.setOnClickListener {
             binding.time.stop()
             actualTrip.endTime = Date().time
@@ -48,7 +57,9 @@ class MainActivity : AppCompatActivity() {
             binding.start.isEnabled = true
             binding.stop.isEnabled = false
         }
+    }
 
+    private fun addHistoryOnClick() {
         binding.history.setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
         }
