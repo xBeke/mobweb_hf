@@ -7,6 +7,9 @@ interface TripDao {
     @Query("SELECT * FROM trips")
     fun getAll(): List<Trip>
 
+    @Query("DELETE FROM trips;")
+    fun deleteAll()
+
     @Insert
     fun insert(shoppingItems: Trip): Long
 
