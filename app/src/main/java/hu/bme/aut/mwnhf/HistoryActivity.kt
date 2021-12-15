@@ -1,11 +1,14 @@
 package hu.bme.aut.mwnhf
 
+import android.content.Intent
 import android.os.Bundle
+import android.telecom.Call
 import android.util.Log
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import hu.bme.aut.mwnhf.adapter.TripAdapter
 import hu.bme.aut.mwnhf.data.Trip
@@ -50,5 +53,9 @@ class HistoryActivity : AppCompatActivity(), TripAdapter.TripClickListener {
             Log.d("HistoryActivity", "Trip was successfully deleted")
             loadItemsInBackground()
         }
+    }
+
+    override fun openDetails(item: Trip) {
+        startActivity(Intent(this, DetailsActivity::class.java))
     }
 }

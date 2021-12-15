@@ -4,12 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import hu.bme.aut.mwnhf.HistoryActivity
 import hu.bme.aut.mwnhf.R
 import hu.bme.aut.mwnhf.data.Trip
 import hu.bme.aut.mwnhf.databinding.TripListBinding
 import java.text.SimpleDateFormat
 import java.util.*
+import android.content.Intent
 
 class TripAdapter(private val listener: TripClickListener) :
     RecyclerView.Adapter<TripAdapter.TripViewHolder>() {
@@ -39,12 +42,17 @@ class TripAdapter(private val listener: TripClickListener) :
                 .setNegativeButton("NO", null)
                 .show()
         }
+
+        holder.binding.card.setOnClickListener {
+            listener.openDetails(tripItem)
+        }
     }
 
     override fun getItemCount(): Int = items.size
 
     interface TripClickListener {
         fun onItemDeleted(item: Trip)
+        fun openDetails(item: Trip)
     }
 
     inner class TripViewHolder(val binding: TripListBinding) : RecyclerView.ViewHolder(binding.root)
