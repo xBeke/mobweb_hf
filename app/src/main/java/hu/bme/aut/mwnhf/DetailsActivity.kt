@@ -28,7 +28,14 @@ class DetailsActivity : AppCompatActivity() {
         thread{
             val trip = database.TripDao().getOne(intent.getLongExtra("tripId",0))
             runOnUiThread {
-                binding.lengthMeter.text = trip.getLengthInM().toString()
+                binding.lengthMeter.text = trip.getLengthInM()
+                binding.averageSpeed.text = trip.getAverageSpeed()
+                binding.downhill.text = trip.getDownhill()
+                binding.uphill.text = trip.getUphill()
+                binding.startTime.text = trip.getStart()
+                binding.endTime.text = trip.getEnd()
+                binding.lengthTime.text = trip.getLengthTime()
+                binding.maxSpeed.text = trip.getMaxSpeed()
             }
         }
     }

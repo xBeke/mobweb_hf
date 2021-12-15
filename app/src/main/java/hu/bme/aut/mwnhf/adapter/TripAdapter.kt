@@ -31,7 +31,7 @@ class TripAdapter(private val listener: TripClickListener) :
 
         holder.binding.elapsedTime.text = elapsedTimeFormat.format(Date(tripItem.endTime - tripItem.startTime))
         holder.binding.height.text = tripItem.getLengthInM().toString() + "m"
-        holder.binding.maxSpeed.text = tripItem.getFastestSection().toString() + "km/h"
+        holder.binding.maxSpeed.text = tripItem.getMaxSpeed().toString() + "km/h"
         holder.binding.start.text = startEndFormat.format(Date(tripItem.startTime))
         holder.binding.end.text = startEndFormat.format(Date(tripItem.endTime))
 
