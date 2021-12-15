@@ -8,4 +8,5 @@ import java.util.*
 class Trip (
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) var id: Long? = null,
     @ColumnInfo(name = "startTime") var startTime: Long,
-    @ColumnInfo(name = "endTime") var endTime: Long) {}
+    @ColumnInfo(name = "endTime") var endTime: Long) {
+}

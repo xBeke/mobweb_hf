@@ -3,16 +3,13 @@ package hu.bme.aut.mwnhf
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.os.SystemClock.elapsedRealtime
 import android.util.Log
-import android.widget.Chronometer
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import hu.bme.aut.mwnhf.adapter.TripAdapter
 import hu.bme.aut.mwnhf.data.Trip
 import hu.bme.aut.mwnhf.data.TripDb
 import hu.bme.aut.mwnhf.databinding.ActivityMainBinding
+import java.util.*
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
@@ -28,36 +25,36 @@ class MainActivity : AppCompatActivity() {
         database = TripDb.getDatabase(applicationContext)
         binding.stop.isEnabled = false
 
+        var actualTrip = Trip(startTime = 0, endTime = 0)
+
         binding.start.setOnClickListener {
             binding.time.base = elapsedRealtime()
             binding.time.start()
             binding.start.isEnabled = false
             binding.stop.isEnabled = true
+            actualTrip.startTime = Date().time
         }
 
         binding.stop.setOnClickListener {
             binding.time.stop()
+            actualTrip.endTime = Date().time
             AlertDialog.Builder(this)
                 .setMessage(getString(R.string.qna))
-                .setPositiveButton(getString(R.string.yes)) { _, _ -> save() }
+                .setPositiveButton(getString(R.string.yes)) { _, _ -> save(actualTrip) }
                 .setNegativeButton(getString(R.string.nop), null)
                 .show()
             binding.time.text = getString(R.string.zeroz)
             binding.start.isEnabled = true
             binding.stop.isEnabled = false
         }
+
         binding.history.setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
         }
     }
 
-    private fun save(){
-        var trip = {
-            val startTime = 2
-            val endTime = 4
-        }
-
-        add(Trip(startTime = 2, endTime = 4))
+    private fun save(actualTrip: Trip){
+        add(actualTrip)
         showDetails()
     }
 

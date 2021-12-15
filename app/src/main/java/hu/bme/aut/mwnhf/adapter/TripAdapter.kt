@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import hu.bme.aut.mwnhf.R
 import hu.bme.aut.mwnhf.data.Trip
 import hu.bme.aut.mwnhf.databinding.TripListBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TripAdapter(private val listener: TripClickListener) :
     RecyclerView.Adapter<TripAdapter.TripViewHolder>() {
@@ -19,8 +21,10 @@ class TripAdapter(private val listener: TripClickListener) :
 
     override fun onBindViewHolder(holder: TripViewHolder, position: Int) {
         val tripItem = items[position]
+        val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
+        simpleDateFormat.timeZone = (TimeZone.getTimeZone("GMT"))
 
-        holder.binding.elapsedTime.text = tripItem.startTime.toString()
+        holder.binding.elapsedTime.text = simpleDateFormat.format(Date(tripItem.endTime - tripItem.startTime))
         holder.binding.height.text = "12km"
         holder.binding.maxSpeed.text = "40km/h"
         holder.binding.start.text = "12:05"
