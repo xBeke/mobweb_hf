@@ -7,5 +7,5 @@ import java.util.*
 @Entity(tableName = "trips")
 class Trip (
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) var id: Long? = null,
-    @ColumnInfo(name = "startTime") var startTime: Date,
-    @ColumnInfo(name = "endTime") var endTime: Date) {}
+    @ColumnInfo(name = "startTime") var startTime: Long,
+    @ColumnInfo(name = "endTime") var endTime: Long) {}
