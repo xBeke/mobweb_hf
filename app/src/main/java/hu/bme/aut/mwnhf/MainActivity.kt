@@ -15,12 +15,14 @@ import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import hu.bme.aut.mwnhf.data.Coord
 
 
 import hu.bme.aut.mwnhf.data.Trip
 import hu.bme.aut.mwnhf.data.TripDb
 import hu.bme.aut.mwnhf.databinding.ActivityMainBinding
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
@@ -29,13 +31,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var database: TripDb
     private lateinit var locationManager: LocationManager
     private final var MIN_TIME: Long  = 1
-    private final var MIN_DIST: Float = 1.0f
+    private final var MIN_DIST: Float = 0.0f
     lateinit var mLastLocation: Location
     private lateinit var thetext: TextView
+    private lateinit var actualTrip: Trip
+    init {
+        actualTrip = Trip(startTime = 0, endTime = 0, cords = ArrayList())
+    }
 
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
-            thetext.text = ("" + location.longitude + ":" + location.latitude)
+            thetext.text = ("Long: " + location.longitude +
+                            "\nLat:" + location.latitude +
+                            "\nSpeed:" + location.speed +
+                            "\nTime:" + location.time +
+                            "\nAltitude:" + location.altitude)
+            actualTrip.cords.add(Coord(location.longitude, location.latitude, location.speed, location.time, location.altitude))
         }
     }
 
@@ -49,14 +60,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         database = TripDb.getDatabase(applicationContext)
         binding.stop.isEnabled = false
-        var actualTrip = Trip(startTime = 0, endTime = 0)
 
-        addStartOnClick(actualTrip)
-        addStopOnClick(actualTrip)
+        addStartOnClick()
+        addStopOnClick()
         addHistoryOnClick()
     }
 
-    private fun addStartOnClick(actualTrip: Trip) {
+    private fun addStartOnClick() {
         binding.start.setOnClickListener {
             binding.time.base = elapsedRealtime()
             binding.time.start()
@@ -85,10 +95,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun addStopOnClick(actualTrip: Trip) {
+    private fun addStopOnClick() {
         binding.stop.setOnClickListener {
             binding.time.stop()
             actualTrip.endTime = Date().time
+            stopTripTracker()
             AlertDialog.Builder(this)
                 .setMessage(getString(R.string.qna))
                 .setPositiveButton(getString(R.string.yes)) { _, _ -> save(actualTrip) }
@@ -97,7 +108,6 @@ class MainActivity : AppCompatActivity() {
             binding.time.text = getString(R.string.zeroz)
             binding.start.isEnabled = true
             binding.stop.isEnabled = false
-            stopTripTracker()
         }
     }
 
@@ -112,8 +122,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun save(actualTrip: Trip){
-        add(actualTrip)
-        showDetails()
+        if (actualTrip.cords.size > 1) {
+            add(actualTrip)
+        }
     }
 
     private fun showDetails(){
@@ -130,7 +141,7 @@ class MainActivity : AppCompatActivity() {
     private fun add(item: Trip) {
         thread {
             database.TripDao().insert(item)
-            Log.d("HistoryActivity", "Trip update was successful")
+            showDetails()
         }
     }
 }

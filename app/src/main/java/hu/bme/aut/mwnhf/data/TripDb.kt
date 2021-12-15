@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
 @Database(entities = [Trip::class], version = 1)
+@TypeConverters(CoordTypeConverter::class)
 abstract class TripDb: RoomDatabase()  {
     abstract fun TripDao(): TripDao
 
