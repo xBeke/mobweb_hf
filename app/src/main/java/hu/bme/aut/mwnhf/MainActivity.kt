@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDetails(){
-
+        startActivity(Intent(this, DetailsActivity::class.java))
     }
 
     private fun add(item: Trip) {

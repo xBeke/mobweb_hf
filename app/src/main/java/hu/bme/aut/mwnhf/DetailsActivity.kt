@@ -9,7 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import hu.bme.aut.mwnhf.databinding.ActivityDetailsBinding
 
-class Details : AppCompatActivity() {
+class DetailsActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDetailsBinding
