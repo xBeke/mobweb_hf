@@ -56,6 +56,6 @@ class HistoryActivity : AppCompatActivity(), TripAdapter.TripClickListener {
     }
 
     override fun openDetails(item: Trip) {
-        startActivity(Intent(this, DetailsActivity::class.java))
+        startActivity(Intent(this, DetailsActivity::class.java).putExtra("tripId",item.id))
     }
 }

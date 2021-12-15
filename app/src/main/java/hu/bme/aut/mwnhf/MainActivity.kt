@@ -60,7 +60,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDetails(){
-        startActivity(Intent(this, DetailsActivity::class.java))
+        thread {
+            startActivity(
+                Intent(this, DetailsActivity::class.java).putExtra(
+                    "tripId",
+                    database.TripDao().getLastId()
+                )
+            )
+        }
     }
 
     private fun add(item: Trip) {

@@ -10,12 +10,18 @@ interface TripDao {
     @Query("DELETE FROM trips;")
     fun deleteAll()
 
+    @Query("SELECT * FROM trips WHERE trips.id = :id")
+    fun getOne(id: Long): Trip
+
+    @Query("SELECT id FROM trips ORDER BY id DESC LIMIT 1 ")
+    fun getLastId(): Long
+
     @Insert
-    fun insert(shoppingItems: Trip): Long
+    fun insert(trip: Trip)
 
     @Update
-    fun update(shoppingItem: Trip)
+    fun update(trip: Trip)
 
     @Delete
-    fun deleteItem(shoppingItem: Trip)
+    fun deleteItem(trip: Trip)
 }

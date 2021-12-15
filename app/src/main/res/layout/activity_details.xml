@@ -30,6 +30,7 @@
                     android:layout_weight="1"
                      />
             <TextView
+                    android:id="@+id/start_time"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -61,6 +62,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/end_time"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -100,6 +102,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/length_meter"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -131,6 +134,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/length_time"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -170,6 +174,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/uphill"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -201,6 +206,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/downhill"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -240,6 +246,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/max_speed"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
@@ -271,6 +278,7 @@
                     android:layout_weight="1" />
 
             <TextView
+                    android:id="@+id/average_speed"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
                     tools:ignore="RtlCompat"
