@@ -21,14 +21,16 @@ class TripAdapter(private val listener: TripClickListener) :
 
     override fun onBindViewHolder(holder: TripViewHolder, position: Int) {
         val tripItem = items[position]
-        val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
-        simpleDateFormat.timeZone = (TimeZone.getTimeZone("GMT"))
+        val elapsedTimeFormat = SimpleDateFormat("HH:mm:ss")
+        elapsedTimeFormat.timeZone = (TimeZone.getTimeZone("GMT"))
+        val startEndFormat = SimpleDateFormat("HH:mm")
+        startEndFormat.timeZone = (TimeZone.getTimeZone("GMT+1"))
 
-        holder.binding.elapsedTime.text = simpleDateFormat.format(Date(tripItem.endTime - tripItem.startTime))
+        holder.binding.elapsedTime.text = elapsedTimeFormat.format(Date(tripItem.endTime - tripItem.startTime))
         holder.binding.height.text = "12km"
         holder.binding.maxSpeed.text = "40km/h"
-        holder.binding.start.text = "12:05"
-        holder.binding.end.text = "13:50"
+        holder.binding.start.text = startEndFormat.format(Date(tripItem.startTime))
+        holder.binding.end.text = startEndFormat.format(Date(tripItem.endTime))
 
         holder.binding.remove.setOnClickListener {
             AlertDialog.Builder(listener as AppCompatActivity)
